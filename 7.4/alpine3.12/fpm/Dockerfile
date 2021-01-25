@@ -151,6 +151,8 @@ RUN set -eux; \
 # ... and are removed in PHP 8+; see also https://github.com/docker-library/php/pull/847#issuecomment-505638229
 		--with-pear \
 		\
+    --enable-sockets \
+    \
 # bundled pcre does not support JIT on s390x
 # https://manpages.debian.org/stretch/libpcre3-dev/pcrejit.3.en.html#AVAILABILITY_OF_JIT_SUPPORT
 		$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') \
